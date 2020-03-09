@@ -5,7 +5,9 @@ if (isset($_SESSION['mdp'])) {
     $sign = '';
     $signe = '';
     $event = 'evenement.php';
+	$boutique = 'boutique.php';
 } else {
+	$boutique ='connexion.php';
     $linkCon = 'connexion.php';
     $connec = 'Connexion';
     $sign = 'inscription.php';
@@ -17,7 +19,7 @@ if (isset($_SESSION['mdp'])) {
 <nav id="nav-menu-container">
     <ul class="nav-menu">
         <li class="menu-active"><a href="../index.php">Accueil</a></li>
-        <li><a href="boutique.php">Boutique</a></li>
+        <li><a href="<?php echo $boutique; ?>">Boutique</a></li>
         <?php if (isset($_SESSION['accronyme'])) { ?>
             <li><a class='btn btn-info btn-lg'data-toggle='modal' data-target='#ModalEvent' style="border-radius: 0px;">Event</a></li>
         <?php } ?>
